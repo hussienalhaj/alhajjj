@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<div class='col-sm-12'>
+<h2>{{category.name}}</h2>
+<hr>
+{% for product in products_of_category %}
+<div class='col-sm-4'>
+<img src='{{product.image.url}}' style='width: 50%; height: 175px'>
+<h4 class="card-title"><a href="{{product.get_absolute_url}}">{{product.title}}</a></h4>
+<p style='font-size:20px'>Цена: <strong>{{product.price}}</strong></p>
+<p class="card-text">{{product.description}}</p>
+</div>
+{% endfor %}
+</div>
+{% endblock content%}
